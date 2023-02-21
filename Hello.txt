@@ -10,5 +10,3 @@ haha 3
 
 
 active 1
-active 2
-active 3
