@@ -1,0 +1,66 @@
+//15
+
+class A{
+  var message = "ABCDEFGHIJKLM"
+  subscript (ran: ClosedRange<Int>) -> String {
+    var s = ""
+    for i in ran {
+      let index = message.index(message.startIndex, offsetBy: i)
+      let t = message[index]
+      s.append(t)
+    }
+    return s
+  }
+}
+
+var obj = A()
+print(obj[2...4])
+
+//17
+class A{
+  var message = [1: "Aniket", 2: "Chintan"]
+  subscript (at: Int) -> String {
+    return message[at] ?? "nil"
+  }
+}
+
+var obj = A()
+print(obj[3])
+
+
+//18
+import Foundation
+
+
+class Song {
+  var songName: String
+  init(songName: String) {
+    self.songName = songName
+  }
+}
+class Classical: Song {
+  var singer: String
+  var composer: String
+  var type = "Classical"
+  init(songName: String, singer: String, composer: String) {
+    self.singer = singer
+    self.composer = composer
+    super.init(songName: songName)
+  }
+}
+
+class HipHop: Song{
+  var singer: String
+  var composer: String
+  var type = "HipHop"
+  init(songName: String, singer: String, composer: String) {
+    self.singer = singer
+    self.composer = composer
+    super.init(songName: songName)
+  }
+}
+
+var obj1 = Classical(songName: "Prathna", singer: "LM", composer: "AR")
+print(obj1.songName)
+var obj2 = Classical(songName: "WOH", singer: "Dino", composer: "Akash")
+print(obj2.songName)
